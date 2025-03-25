@@ -2,7 +2,7 @@ package Aston;
 
 public class lesson4 {
 
-    public static void main (String[] args){
+    public static void main (String[] args) {
         printThreeWords();
         checkSumSign();
         printColor();
@@ -12,6 +12,39 @@ public class lesson4 {
         System.out.println(reverseCheckValue(0));
         printNumberString(5, "Nokia, connected people");
         System.out.println(yearLeap(-2004));
+
+        int nums[] = new int[]{1, 0, 0, 0, 1, 1, 1, 0}; // task 10
+        for (int a = 0; a < nums.length; a++) {
+            if (nums[a] == 0) {
+                nums[a] = 1;
+            } else {
+                nums[a] = 0;
+            }
+        }
+        for (int num : nums) {
+            System.out.print(num);
+        }
+
+        int numbers[] = new int[100]; // task 11
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i;
+        }
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("[" + i + "] " + numbers[i]);
+
+        }
+
+        int [] arrMultiply = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}; // task 12
+        for (int a = 0; a < arrMultiply.length; a++) {
+            if (arrMultiply[a] < 6) {
+                arrMultiply[a] *= 2;
+            }
+        }
+            for (int num : arrMultiply) {
+                System.out.print(num+ " ");
+            }
+
+
     }
     public static void printThreeWords()  { //1 task
     System.out.println(" Orange\n Banana\n Apple\n");
