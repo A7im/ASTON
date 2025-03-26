@@ -106,6 +106,7 @@ public class lesson4 {
 
         }
     }
+
     public static void arrayTo100() {
         int numbers[] = new int[100]; // task 11
         for (int i = 0; i < numbers.length; i++) {
@@ -113,6 +114,7 @@ public class lesson4 {
             System.out.print("[" + i + "]" + i);
         }
     }
+
     public static void arrayMultiply() {
         int[] arrMultiply = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}; // task 12
         for (int a = 0; a < arrMultiply.length; a++) {
