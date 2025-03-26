@@ -12,6 +12,7 @@ public class lesson4 {
         System.out.println(reverseCheckValue(0));
         printNumberString(5, "Nokia, connected people");
         System.out.println(yearLeap(-2004));
+       Array(7,3);
 
         int nums[] = new int[]{1, 0, 0, 0, 1, 1, 1, 0}; // task 10
         for (int a = 0; a < nums.length; a++) {
@@ -28,23 +29,35 @@ public class lesson4 {
         int numbers[] = new int[100]; // task 11
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = i;
-        }
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println("[" + i + "] " + numbers[i]);
-
+            System.out.println("[" + i + "]" + i);
         }
 
-        int [] arrMultiply = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}; // task 12
+
+        int[] arrMultiply = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1}; // task 12
         for (int a = 0; a < arrMultiply.length; a++) {
             if (arrMultiply[a] < 6) {
                 arrMultiply[a] *= 2;
             }
+
         }
-            for (int num : arrMultiply) {
-                System.out.print(num+ " ");
+        for (int num : arrMultiply) {
+            System.out.print(num +" ");
+        }
+        System.out.println();
+
+        int[][] arrayDiag = new int[4][4]; //task 13
+        for (int i = 0; i < 4; i++) {
+            arrayDiag[i][i] = 1;                // Диагональ слева
+            arrayDiag[i][4 - 1 - i] = 1;        // Диагональ справа
+
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(arrayDiag[i][j] + " ");
             }
+            System.out.println();
 
-
+        }
     }
     public static void printThreeWords()  { //1 task
     System.out.println(" Orange\n Banana\n Apple\n");
@@ -116,6 +129,16 @@ public class lesson4 {
         return (year %4==0 && year %100!=0 || year %400==0) ;
     }
 
+    public static int[] Array(int len, int initialValue) { // task 14
+        int[] array = new int[len];
+        for (int i = 0; i < len; i++) {
+            array[i] = initialValue;
+        }
 
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        return array;
+    }
 
 }
