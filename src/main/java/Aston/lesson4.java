@@ -128,6 +128,7 @@ public class lesson4 {
         }
         System.out.println();
     }
+
     public static void arrayChangeDiag() {
         int[][] arrayDiag = new int[4][4]; //task 13
         for (int i = 0; i < 4; i++) {
@@ -143,6 +144,7 @@ public class lesson4 {
 
         }
     }
+
     public static int[] arrayInitValue(int len, int initialValue) { // task 14
         int[] array = new int[len];
         for (int i = 0; i < len; i++) {
