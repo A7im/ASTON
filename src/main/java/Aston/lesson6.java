@@ -1,7 +1,9 @@
 package Aston;
 
 public class lesson6 {
+
     public static void main(String[] args) {
+
         Product firstProduct = new Product("Vostro","19.03.2024", "Dell", "China", 399, true);
         firstProduct.infoAboutProduct();
 
@@ -18,4 +20,5 @@ public class lesson6 {
         bigPark.parkInfo();
 
     }
+
 }

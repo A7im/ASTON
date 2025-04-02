@@ -3,8 +3,7 @@ package Aston;
 import java.util.ArrayList;
 
 public class Park {
-
-     ArrayList<Attraction> attractions = new ArrayList<>();
+    ArrayList<Attraction> attractions = new ArrayList<>();
 
    public static class Attraction {
         String workTime, name;

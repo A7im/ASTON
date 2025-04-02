@@ -18,6 +18,7 @@ public class Product {
         this.countryOfManufacture = countryOfManufacture;
         this.price = price;
          this.bookingStatus = bookingStatus;
+
     }
 
     public void infoAboutProduct(){
@@ -28,5 +29,6 @@ public class Product {
         System.out.println("Страна происхождения: " +countryOfManufacture);
         System.out.println("Цена " +price + " $");
         System.out.println("Состояние бронирования: " + (bookingStatus ? "Забронирован" : "Свободен"));
+
     }
 }
