@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Park {
     ArrayList<Attraction> attractions = new ArrayList<>();
 
-   public static class Attraction {
+    public static class Attraction {
         String workTime, name;
         float price;
 
@@ -22,9 +22,9 @@ public class Park {
 
     public void parkInfo() {
         for (Attraction any : attractions) {
-            System.out.println("Аттракцион: " +any.name);
-            System.out.print("Работает: " +any.workTime + " ");
-            System.out.println("Цена билета: " +any.price + " руб.");
+            System.out.println("Аттракцион: " + any.name);
+            System.out.print("Работает: " + any.workTime + " ");
+            System.out.println("Цена билета: " + any.price + " руб.");
 
         }
 
