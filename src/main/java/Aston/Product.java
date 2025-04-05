@@ -31,4 +31,5 @@ public class Product {
         System.out.println("Состояние бронирования: " + (bookingStatus ? "Забронирован" : "Свободен"));
 
     }
+
 }
