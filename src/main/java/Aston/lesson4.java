@@ -2,7 +2,7 @@ package Aston;
 
 public class lesson4 {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         printThreeWords();
         checkSumSign();
         printColor();
@@ -16,21 +16,20 @@ public class lesson4 {
         System.out.println();
         arrayTo100();
         arrayChangeDiag();
-        arrayInitValue(7,3);
-
-
+        arrayInitValue(7, 3);
 
 
     }
-    public static void printThreeWords()  { //1 task
-    System.out.println(" Orange\n Banana\n Apple\n");
+
+    public static void printThreeWords() { //1 task
+        System.out.println(" Orange\n Banana\n Apple\n");
     }
+
     public static void checkSumSign() { // 2 task
-        int a=9, b=8;
-        if (a+b>=0) {
+        int a = 9, b = 8;
+        if (a + b >= 0) {
             System.out.println("Сумма положительная");
-        }
-        else {
+        } else {
             System.out.println("Сумма отрицательная");
         }
 
@@ -41,64 +40,59 @@ public class lesson4 {
         int value = 101;
         if (value <= 0) {
             System.out.println("Красный");
-        }
-        else if (0<=value && value<=100) {
+        } else if (0 <= value && value <= 100) {
             System.out.println("Желтый");
-        }
-        else
+        } else
             System.out.println("Зеленый");
 
     }
 
     public static void compareNumbers() { // 4 task
-        int a=20, b=75;
-        if (a>=b) {
+        int a = 20, b = 75;
+        if (a >= b) {
             System.out.println("a>=b");
-        }
-        else {
+        } else {
             System.out.println("a<b");
         }
 
     }
 
     public static boolean sumRange(int a, int b) { // 5 task
-        int sum = a + b;
-        return sum >= 10 && sum <= 20;
+
+        return a + b >= 10 && a + b <= 20;
     }
 
     public static void positiveNegative(int i) { // 6 task
-        if (i>=0)
+        if (i >= 0)
             System.out.println("Положительное число");
         else
             System.out.println("Отрицательное число");
     }
 
     public static boolean reverseCheckValue(int i) { // 7 task
-        return i<0;
+        return i < 0;
     }
 
     public static void printNumberString(int a, String b) {  // 8 task
-        for (int i=0; i<a; i++) {
+        for (int i = 0; i < a; i++) {
             System.out.println(b);
         }
 
     }
 
-    public static boolean yearLeap (int year) { // 9 task
-        if (year<-45) {
+    public static boolean yearLeap(int year) { // 9 task
+        if (year < -45) {
             System.out.println("Високосный год введен с 45 года до н.э.");
             return false;
         }
-        return (year %4==0 && year %100!=0 || year %400==0) ;
+        return (year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
     }
 
-    public static void arrayChange()  { //1 task
+    public static void arrayChange() { //1 task
         int nums[] = new int[]{1, 0, 0, 0, 1, 1, 1, 0}; // task 10
         for (int a = 0; a < nums.length; a++) {
             if (nums[a] == 0) {
                 nums[a] = 1;
-            } else {
-                nums[a] = 0;
             }
         }
         for (int num : nums) {
@@ -128,6 +122,7 @@ public class lesson4 {
         }
         System.out.println();
     }
+
     public static void arrayChangeDiag() {
         int[][] arrayDiag = new int[4][4]; //task 13
         for (int i = 0; i < 4; i++) {
@@ -143,6 +138,7 @@ public class lesson4 {
 
         }
     }
+
     public static int[] arrayInitValue(int len, int initialValue) { // task 14
         int[] array = new int[len];
         for (int i = 0; i < len; i++) {
