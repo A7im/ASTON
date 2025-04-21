@@ -28,8 +28,8 @@ public class Lesson12 {
             int[] arr = new int[5];
             arr[10] = 42;
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("ArrayIndexOutOfBoundsException:");
-            System.err.println("Сообщение: " + e.getMessage());
+            System.err.println("ArrayIndexOutOfBoundsException:");
+            System.err.println("Ошибка: " + e.getMessage());
 
         }
     }
