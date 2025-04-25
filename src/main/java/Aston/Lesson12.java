@@ -25,6 +25,7 @@ public class Lesson12 {
         processArray(process, secondArray, "Test 2");
 
     }
+
     private static void processArray(ArrayProcess process, String[][] array, String testName) {
         try {
             int result = process.ProcessArray(array);
@@ -32,7 +33,6 @@ public class Lesson12 {
         } catch (MyArraySizeException | MyArrayDataException e) {
             System.err.println("Ошибка: " + e.getMessage());
         }
-
 
         try {
             int[] arr = new int[5];
