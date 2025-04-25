@@ -2,7 +2,7 @@ package Aston.lesson12;
 
 import java.util.Arrays;
 
-class ArrayProcess {
+public class ArrayProcess {
     public int ProcessArray(String[][] array) throws MyArraySizeException, MyArrayDataException {
         SizeCheck(array);
         return CalculateSum(array);

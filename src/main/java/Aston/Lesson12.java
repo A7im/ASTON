@@ -1,31 +1,38 @@
 package Aston;
 
-import static Aston.Array.sumArray;
+
+import Aston.lesson12.ArrayProcess;
+import Aston.lesson12.MyArrayDataException;
+import Aston.lesson12.MyArraySizeException;
 
 public class Lesson12 {
 
     public static void main(String[] args) {
-        String[][] firstArray = {{"5", "7", "12", "1"},
-                {"5", "7", "12", "1"},
-                {"5", "7", "12", "1"},
-                {"5", "7", "12"}};
+        ArrayProcess process = new ArrayProcess();
+        String[][] firstArray =
+                {{"5", "7", "12", "1"},
+                        {"5", "7", "12", "1"},
+                        {"5", "7", "12", "1"},
+                        {"5", "7", "12"}};
 
-        String[][] secondArray = {{"5", "7", "12", "1"},
-                {"5", "7", "12", "1"},
-                {"5", "7", "12", "1"},
-                {"5", "7", "ххх", "1"}};
+        String[][] secondArray =
+                {{"5", "7", "12", "1"},
+                        {"5", "7", "12", "1"},
+                        {"5", "7", "12", "1"},
+                        {"5", "7", "ххх", "1"}};
 
+        processArray(process, firstArray, "Test 1");
+        processArray(process, secondArray, "Test 2");
+
+    }
+    private static void processArray(ArrayProcess process, String[][] array, String testName) {
         try {
-            System.out.println("Сумма корректного массива: " + sumArray(firstArray));
+            int result = process.ProcessArray(array);
+            System.out.println("Сумма корректного массива: " + testName);
         } catch (MyArraySizeException | MyArrayDataException e) {
             System.err.println("Ошибка: " + e.getMessage());
         }
 
-        try {
-            System.out.println("Сумма корректного массива: " + sumArray(secondArray));
-        } catch (MyArraySizeException | MyArrayDataException e) {
-            System.err.println("Ошибка: " + e.getMessage());
-        }
 
         try {
             int[] arr = new int[5];
