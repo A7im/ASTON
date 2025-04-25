@@ -27,7 +27,7 @@ public class Lesson11 {
         System.out.println("Кол-во котов: " + Cat.getCatCount() + " шт.");
         System.out.println("Кол-во собак: " + Dog.getDogCount() + " шт.");
 
-        Cat.Bowl bowl = new Cat.Bowl(20);
+        Bowl bowl = new Bowl(40);
         List<Cat> cats = new ArrayList<>();
         cats.add(cat1);
         cats.add(cat2);
@@ -42,7 +42,7 @@ public class Lesson11 {
         }
 
         System.out.println("Добавим еще еды в миску:");
-        bowl.addFood(-5);
+        bowl.addFood(5);
         for (Cat cat : cats) {
             if (cat.isHungry()) {
                 cat.eat(bowl, 15);
