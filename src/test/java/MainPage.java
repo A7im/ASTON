@@ -56,9 +56,7 @@ class MainPage extends BasePage {
 
     public void selectPaymentType(String typeName) {
         acceptCookiesIfPresent();
-
         wait.until(ExpectedConditions.elementToBeClickable(paymentTypeDropdown)).click();
-
         List<WebElement> options = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(paymentTypeItems));
         for (WebElement option : options) {
             if (option.getText().trim().equalsIgnoreCase(typeName)) {
@@ -75,7 +73,6 @@ class MainPage extends BasePage {
             return null;
         }
     }
-
 
     public String getSubscriptionFieldPlaceholder() {
         try {
@@ -164,4 +161,5 @@ class MainPage extends BasePage {
             return null;
         }
     }
+
 }

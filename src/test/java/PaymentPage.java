@@ -76,4 +76,5 @@ class PaymentPage extends BasePage {
         driver.switchTo().defaultContent();
         return text;
     }
+
 }
