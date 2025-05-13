@@ -1,10 +1,11 @@
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
+
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ReguestTestEcho extends BaseTestEcho{
+public class ReguestTestEcho extends BaseTestEcho {
 
     @Test
     void testGetRequest() {
@@ -21,27 +22,28 @@ public class ReguestTestEcho extends BaseTestEcho{
     }
 
     @Test
-    void testPostRequest() {
-        JSONObject requestBody = new JSONObject()
-                .put("data", "test_value");
+    void testFormDataRequest() {
 
         Response response = given()
-                .contentType("application/json")
-                .body(requestBody.toString())
+                .contentType("application/x-www-form-urlencoded; charset=UTF-8")
+                .formParam("username", "Fix")
+                .formParam("email", "fix@gmail.com")
                 .when()
                 .post("/post")
                 .then()
                 .extract().response();
 
         assertEquals(200, response.statusCode());
-        assertEquals("test_value", response.jsonPath().getString("json.data"));
-        assertTrue(response.jsonPath().getMap("headers").containsKey("x-forwarded-port"));
+        assertEquals("Fix", response.jsonPath().getString("form.username"));
+        assertEquals("fix@gmail.com", response.jsonPath().getString("form.email"));
+        assertNotNull(response.jsonPath().getString("headers.content-type"));
+        assertTrue(response.jsonPath().getString("headers.content-type").contains("x-www-form-urlencoded"));
     }
 
     @Test
     void testPutRequest() {
         JSONObject requestBody = new JSONObject()
-                .put("update", "new_value");
+                .put("update", "505");
 
         Response response = given()
                 .contentType("application/json")
@@ -52,7 +54,7 @@ public class ReguestTestEcho extends BaseTestEcho{
                 .extract().response();
 
         assertEquals(200, response.statusCode());
-        assertEquals("new_value", response.jsonPath().getString("json.update"));
+        assertEquals("505", response.jsonPath().getString("json.update"));
     }
 
     @Test
