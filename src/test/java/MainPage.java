@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -30,22 +31,26 @@ class MainPage extends BasePage {
         super(driver);
     }
 
+    @Step("Получение текста заголовка блока")
     public String getBlockTitleText() {
         acceptCookiesIfPresent();
         return wait.until(ExpectedConditions.visibilityOfElementLocated(blockTitle)).getText().trim();
     }
 
+    @Step("Получение количества логотипов платежных систем")
     public int getPaymentLogosCount() {
         acceptCookiesIfPresent();
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(paymentLogos)).size();
     }
 
+    @Step("Кликнуть на ссылку 'Подробнее о сервисе'")
     public ServiceInfoPage clickDetailsLink() {
         acceptCookiesIfPresent();
         wait.until(ExpectedConditions.elementToBeClickable(detailsLink)).click();
         return new ServiceInfoPage(driver);
     }
 
+    @Step("Заполнить форму оплаты: телефон = {phone}, сумма = {sum}")
     public PaymentPage fillAndSubmitPaymentForm(String phone, String sum) {
         acceptCookiesIfPresent();
         wait.until(ExpectedConditions.visibilityOfElementLocated(phoneInput)).sendKeys(phone);
@@ -54,6 +59,7 @@ class MainPage extends BasePage {
         return new PaymentPage(driver);
     }
 
+    @Step("Выбрать тип оплаты: {typeName}")
     public void selectPaymentType(String typeName) {
         acceptCookiesIfPresent();
         wait.until(ExpectedConditions.elementToBeClickable(paymentTypeDropdown)).click();
@@ -66,6 +72,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Телефон' (Услуги связи)")
     public String getPhoneFieldPlaceholder() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(phoneInput)).getAttribute("placeholder");
@@ -74,6 +81,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Абонент' (Домашний интернет)")
     public String getSubscriptionFieldPlaceholder() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(phoneSubscription)).getAttribute("placeholder");
@@ -82,6 +90,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Номер счета' (Рассрочка)")
     public String getInstallmentPlanNumberPlaceholder() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(installmentPlanNumber)).getAttribute("placeholder");
@@ -90,6 +99,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Задолженность'")
     public String getDebtPlaceholder() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(debtNumber)).getAttribute("placeholder");
@@ -97,7 +107,7 @@ class MainPage extends BasePage {
             return null;
         }
     }
-
+    @Step("Получить плейсхолдер поля 'Сумма' (Услуги связи)")
     public String getSumInput() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(sumInput)).getAttribute("placeholder");
@@ -105,7 +115,7 @@ class MainPage extends BasePage {
             return null;
         }
     }
-
+    @Step("Получить плейсхолдер поля 'Сумма' (Домашний интернет)")
     public String getSumInputHomeInternet() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(sumInputHomeInternet)).getAttribute("placeholder");
@@ -114,6 +124,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Сумма' (Расрочка)")
     public String getSumInputSubscription() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(sumInputSubscription)).getAttribute("placeholder");
@@ -122,6 +133,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Сумма' (Задолженность)")
     public String getSumInputDebt() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(sumInputDebt)).getAttribute("placeholder");
@@ -130,6 +142,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Email' (Услуги связи)")
     public String getEmailCommunicationService() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(emailCommunicationService)).getAttribute("placeholder");
@@ -138,6 +151,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Email' (Домашний интернет)")
     public String getEmailHomeInternet() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(emailHomeInternet)).getAttribute("placeholder");
@@ -146,6 +160,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Email' (Расрочка)")
     public String getEmailInstallmentPlan() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(emailInstallmentPlan)).getAttribute("placeholder");
@@ -154,6 +169,7 @@ class MainPage extends BasePage {
         }
     }
 
+    @Step("Получить плейсхолдер поля 'Email' (Задолженность)")
     public String getEmailDebt() {
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(emailDebt)).getAttribute("placeholder");

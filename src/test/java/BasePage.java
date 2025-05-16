@@ -1,7 +1,6 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,6 +15,7 @@ class BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+    @Step("Принять cookies, если отображаются")
     protected void acceptCookiesIfPresent() {
         try {
             WebElement acceptCookie = wait.until(ExpectedConditions.elementToBeClickable(
@@ -23,5 +23,10 @@ class BasePage {
             acceptCookie.click();
         } catch (TimeoutException ignored) {
         }
+            }
+
+    @Attachment(value = "Скриншот", type = "image/png")
+    public byte[] takeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }
