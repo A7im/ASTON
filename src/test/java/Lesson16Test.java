@@ -41,7 +41,7 @@ public class Lesson16Test {
     @DisplayName("Проверка корректности заголовка блока")
     @Description("Тест проверяет, что заголовок блока соответствует ожидаемому")
     void checkBlockName() {
-        assertEquals("Онлайн пополнениЯ\nбез комиссии", mainPage.getBlockTitleText());
+        assertEquals("Онлайн пополнениЯ\nбез комиссии", mainPage.getBlockTitleText()); // Тест ляжет. Сделано специально, для проверки скриншота
     }
 
     @Test
