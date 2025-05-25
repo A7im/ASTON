@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-class PaymentPage extends BasePage {
+class PaymentPage18 extends BasePage18 {
     private By paymentFrame = By.xpath("//iframe[@class='bepaid-iframe']");
     private By amountDisplay = By.xpath("//div[@class = 'pay-description__cost']");
     private By phoneDisplay = By.xpath("//div[@class = 'pay-description__text']");
@@ -13,7 +13,7 @@ class PaymentPage extends BasePage {
     private By paymentSystemIcons = By.cssSelector("img[src*='system']:not([style*='opacity: 0'])");
     private By submitButton = By.xpath("//button[@class='colored disabled']");
 
-    public PaymentPage(WebDriver driver) {
+    public PaymentPage18(WebDriver driver) {
         super(driver);
     }
 

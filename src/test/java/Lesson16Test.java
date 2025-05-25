@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(ScreenshotWatcher.class)
 public class Lesson16Test {
     static WebDriver driver;
-    static MainPage mainPage;
+    static MainPage18 mainPage;
     static String initialUrl;
     @RegisterExtension
     ScreenshotWatcher watcher = new ScreenshotWatcher();
@@ -27,7 +27,7 @@ public class Lesson16Test {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.mts.by");
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage18(driver);
         initialUrl = driver.getCurrentUrl();
     }
 
@@ -57,7 +57,7 @@ public class Lesson16Test {
     @DisplayName("Переход на страницу информации о сервисе")
     @Description("Тест проверяет переход по ссылке и возврат на исходную страницу")
     void moreAboutServiceSameWindow() {
-        ServiceInfoPage serviceInfoPage = mainPage.clickDetailsLink();
+        ServiceInfoPage18 serviceInfoPage = mainPage.clickDetailsLink();
         serviceInfoPage.verifyUrlAndReturnBack(initialUrl);
     }
 
@@ -103,7 +103,7 @@ public class Lesson16Test {
     @DisplayName("Проверка формы оплаты")
     @Description("Тест проверяет отображение фрейма оплаты, суммы, номера телефона и полей")
     void paymentContinueButton() {
-        PaymentPage paymentPage = mainPage.fillAndSubmitPaymentForm("297777777", "2");
+        PaymentPage18 paymentPage = mainPage.fillAndSubmitPaymentForm("297777777", "2");
         assertTrue(paymentPage.isPaymentFrameDisplayed());
         assertEquals("2.00 BYN", paymentPage.getDisplayedAmount());
         assertTrue(paymentPage.getDisplayedPhoneNumber().contains("375297777777"));

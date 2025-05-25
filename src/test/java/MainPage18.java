@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-class MainPage extends BasePage {
+class MainPage18 extends BasePage18 {
     private By blockTitle = By.xpath("//div[@class='pay__wrapper']//h2");
     private By paymentLogos = By.xpath("//div[@class='pay__partners']//img");
     private By detailsLink = By.linkText("Подробнее о сервисе");
@@ -27,7 +27,7 @@ class MainPage extends BasePage {
     private By emailInstallmentPlan = By.id("instalment-email");
     private By emailDebt = By.id("arrears-email");
 
-    public MainPage(WebDriver driver) {
+    public MainPage18(WebDriver driver) {
         super(driver);
     }
 
@@ -44,19 +44,19 @@ class MainPage extends BasePage {
     }
 
     @Step("Кликнуть на ссылку 'Подробнее о сервисе'")
-    public ServiceInfoPage clickDetailsLink() {
+    public ServiceInfoPage18 clickDetailsLink() {
         acceptCookiesIfPresent();
         wait.until(ExpectedConditions.elementToBeClickable(detailsLink)).click();
-        return new ServiceInfoPage(driver);
+        return new ServiceInfoPage18(driver);
     }
 
     @Step("Заполнить форму оплаты: телефон = {phone}, сумма = {sum}")
-    public PaymentPage fillAndSubmitPaymentForm(String phone, String sum) {
+    public PaymentPage18 fillAndSubmitPaymentForm(String phone, String sum) {
         acceptCookiesIfPresent();
         wait.until(ExpectedConditions.visibilityOfElementLocated(phoneInput)).sendKeys(phone);
         wait.until(ExpectedConditions.visibilityOfElementLocated(sumInput)).sendKeys(sum);
         wait.until(ExpectedConditions.elementToBeClickable(continueButton)).click();
-        return new PaymentPage(driver);
+        return new PaymentPage18(driver);
     }
 
     @Step("Выбрать тип оплаты: {typeName}")
